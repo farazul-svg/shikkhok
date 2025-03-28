@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>শিক্ষক নিয়োগ বিজ্ঞপ্তি</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        header {
+            text-align: center;
+            background: #007bff;
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+        }
+        .highlight {
+            font-weight: bold;
+            background: yellow;
+            padding: 3px 8px;
+            border-radius: 5px;
+        }
+        .warning-box {
+            background: #ffdddd;
+            color: red;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+        .notice-board {
+            margin-top: 20px;
+        }
+        .card {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 15px;
+        }
+        .card h3 {
+            font-weight: bold;
+            color: #333;
+        }
+        .card p:first-of-type {
+            font-weight: bold;
+        }
+        .buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        button {
+            background: #ffc107;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        .copied {
+            background: #28a745 !important;
+            color: white;
+        }
+         /* যোগ করুন বাটন */
+    .add-button {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 100;
+        }
+        .add-button button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+        .add-button button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>মোট শিক্ষক নিয়োগ বিজ্ঞপ্তি: <span class="highlight">১</span> টি</h1>
+    </header>
+    <div class="warning-box">⚠️ অনুগ্রহ করে যাচাই করে নিয়োগ নিন, কর্তৃপক্ষ দায়ী নয়।</div>
+    <section class="notice-board">
+        <div class="card">
+            <h3>📌 <span class="highlight">বিষয়: গণিত</span></h3>
+            <p>👤 শিক্ষক: জন Doe</p>
+            <p>🏛️ বিশ্ববিদ্যালয়: ঢাকা বিশ্ববিদ্যালয়</p>
+            <p>🏫 কলেজ: ঢাকা কলেজ</p>
+            <p>🏢 স্কুল: মতিঝিল সরকারি স্কুল</p>
+            <p>📍 ঠিকানা: ঢাকা, বাংলাদেশ</p>
+            <p>📞 নাম্বার: 017XXXXXXXX</p>
+            <div class="buttons">
+                <button id="copyBtn" onclick="copyNumber('017XXXXXXXX', this)">📋 নাম্বার কপি করুন</button>
+            </div>
+        </div>
+    </section>
+    <script>
+        function copyNumber(number, btn) {
+            navigator.clipboard.writeText(number);
+            btn.innerText = "✔ কপি সম্পন্ন";
+            btn.classList.add("copied");
+            setTimeout(() => {
+                btn.innerText = "📋 নাম্বার কপি করুন";
+                btn.classList.remove("copied");
+            }, 2000);
+        }
+    </script>
+    <!-- যোগ করুন বাটন -->
+  <div class="add-button">
+    <a href="https://www.google.com"><button>➕ যোগ করুন</button></a>
+
+</div>
+</body>
+</html>
